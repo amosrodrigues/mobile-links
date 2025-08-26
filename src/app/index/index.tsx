@@ -1,10 +1,11 @@
 import { Image, View, TouchableOpacity } from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
 
-import { styles } from "./style"
+import { styles } from "./styles"
 import { colors } from "@/styles/colors"
 
 import { Categories } from "@/components/categories"
+import { Link } from "@/components/link"
 
 export default function Index() {
   return (
@@ -18,6 +19,12 @@ export default function Index() {
       </View>
 
       <Categories />
+
+      <Link
+        name="Rocketseat"
+        url="https://www.rocketseat.com.br"
+        onDetails={() => console.log("Show details")}
+      />
     </View>
   )
 }
