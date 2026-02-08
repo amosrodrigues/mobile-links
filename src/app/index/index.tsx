@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback } from 'react'
 import {
   Text,
   Image,
@@ -8,18 +8,18 @@ import {
   Modal,
   Alert,
   Linking,
-} from "react-native"
-import { MaterialIcons } from "@expo/vector-icons"
+} from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons'
 
-import { styles } from "./styles"
-import { colors } from "@/styles/colors"
-import { linkStorage, LinkStorage } from "@/storage/link-storage"
+import { styles } from './_styles'
+import { colors } from '@/styles/colors'
+import { linkStorage, LinkStorage } from '@/storage/link-storage'
 
-import { Categories } from "@/components/categories"
-import { Link } from "@/components/link"
-import { Option } from "@/components/option"
-import { router, useFocusEffect } from "expo-router"
-import { categories } from "@/utils/categories"
+import { Categories } from '@/components/categories'
+import { Link } from '@/components/link'
+import { Option } from '@/components/option'
+import { router, useFocusEffect } from 'expo-router'
+import { categories } from '@/utils/categories'
 
 export default function Index() {
   const [showModal, setShowModal] = useState(false)
@@ -33,7 +33,7 @@ export default function Index() {
       const filtered = response.filter((link) => link.category === category)
       setLinks(filtered)
     } catch (error) {
-      Alert.alert("Erro", "Não foi possível listar os links")
+      Alert.alert('Erro', 'Não foi possível listar os links')
     }
   }
 
@@ -48,20 +48,20 @@ export default function Index() {
       getLinks()
       setShowModal(false)
     } catch (error) {
-      Alert.alert("Erro", "Não foi possível excluir")
+      Alert.alert('Erro', 'Não foi possível excluir')
       console.log(error)
     }
   }
 
   async function handleRemove() {
-    Alert.alert("Remover", "Deseja realmente excluir?", [
+    Alert.alert('Remover', 'Deseja realmente excluir?', [
       {
-        text: "Não",
-        style: "cancel",
+        text: 'Não',
+        style: 'cancel',
       },
       {
-        text: "Sim",
-        style: "destructive",
+        text: 'Sim',
+        style: 'destructive',
         onPress: linkRemove,
       },
     ])
@@ -72,7 +72,7 @@ export default function Index() {
       await Linking.openURL(link.url)
       setShowModal(false)
     } catch (error) {
-      Alert.alert("Erro", "Não foi possível abrir o link")
+      Alert.alert('Erro', 'Não foi possível abrir o link')
       console.log(error)
     }
   }
@@ -86,9 +86,9 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("@/assets/logo.png")} style={styles.logo} />
+        <Image source={require('@/assets/logo.png')} style={styles.logo} />
 
-        <TouchableOpacity onPress={() => router.navigate("/add")}>
+        <TouchableOpacity onPress={() => router.navigate('/add')}>
           <MaterialIcons name="add" size={32} color={colors.green[300]} />
         </TouchableOpacity>
       </View>
