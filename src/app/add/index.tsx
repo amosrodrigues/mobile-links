@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Alert } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { router } from 'expo-router'
 
-import { styles } from './_styles'
+import { styles } from '@/styles/add/styles'
 import { colors } from '@/styles/colors'
 import { linkStorage } from '@/storage/link-storage'
 

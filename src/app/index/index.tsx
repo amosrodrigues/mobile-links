@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 
-import { styles } from './_styles'
+import { styles } from '@/styles/index/styles'
 import { colors } from '@/styles/colors'
 import { linkStorage, LinkStorage } from '@/storage/link-storage'
 
